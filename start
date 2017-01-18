@@ -1,0 +1,2 @@
+webpack -w // update bundle.js
+node index.js // run server node
