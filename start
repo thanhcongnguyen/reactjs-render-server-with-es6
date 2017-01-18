@@ -1,2 +1,3 @@
 webpack -w // update bundle.js
 node index.js // run server node
+http://localhost:3000/
