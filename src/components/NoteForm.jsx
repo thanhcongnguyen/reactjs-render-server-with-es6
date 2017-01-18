@@ -1,6 +1,11 @@
 import React from 'react';
 
 class NoteForm extends React.Component{
+  //good syntax component es6
+  constructor(props){
+	super(props);
+	this.addNote = this.addNote.bind(this);
+  }
   addNote(){
       console.log("addnote");
   }
