@@ -13,7 +13,7 @@ class Note extends React.Component{
   render(){
     return(
       <div className="note">
-        <h3>abcd</h3>
+        <h3>{this.props.children}</h3>
         <button onClick={this.deleteNote}>Xóa</button>
       </div>
     )

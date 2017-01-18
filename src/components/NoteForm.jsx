@@ -4,7 +4,7 @@ class NoteForm extends React.Component{
   //good syntax component es6
   constructor(props){
 	super(props);
-	this.addNote = this.addNote.bind(this);
+	this.addNote = this.addNote.bind(this);// de function addNote hieu dc this cua component NoteForm
   }
   addNote(){
       console.log("addnote");

@@ -21510,23 +21510,34 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var arr = [1, 2, 3];
+
 	var List = function (_React$Component) {
 	  _inherits(List, _React$Component);
 
-	  function List() {
+	  function List(props) {
 	    _classCallCheck(this, List);
 
-	    return _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+	    // this.state = {arr: ["a", "b", "c"] };
 	  }
 
 	  _createClass(List, [{
 	    key: 'render',
 	    value: function render() {
+	      var arrPlus = arr.map(function (i) {
+	        return _react2.default.createElement(
+	          _Note2.default,
+	          { key: i },
+	          'B\xE0i -',
+	          i
+	        );
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main' },
 	        _react2.default.createElement(_NoteForm2.default, null),
-	        _react2.default.createElement(_Note2.default, null)
+	        arrPlus
 	      );
 	    }
 	  }]);
@@ -21559,10 +21570,14 @@
 	var Note = function (_React$Component) {
 	  _inherits(Note, _React$Component);
 
-	  function Note() {
+	  //good syntax component es6
+	  function Note(props) {
 	    _classCallCheck(this, Note);
 
-	    return _possibleConstructorReturn(this, (Note.__proto__ || Object.getPrototypeOf(Note)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Note.__proto__ || Object.getPrototypeOf(Note)).call(this, props));
+
+	    _this.deleteNote = _this.deleteNote.bind(_this);
+	    return _this;
 	  }
 
 	  _createClass(Note, [{
@@ -21579,7 +21594,7 @@
 	        _react2.default.createElement(
 	          "h3",
 	          null,
-	          "abcd"
+	          this.props.children
 	        ),
 	        _react2.default.createElement(
 	          "button",
@@ -21618,10 +21633,14 @@
 	var NoteForm = function (_React$Component) {
 	  _inherits(NoteForm, _React$Component);
 
-	  function NoteForm() {
+	  //good syntax component es6
+	  function NoteForm(props) {
 	    _classCallCheck(this, NoteForm);
 
-	    return _possibleConstructorReturn(this, (NoteForm.__proto__ || Object.getPrototypeOf(NoteForm)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (NoteForm.__proto__ || Object.getPrototypeOf(NoteForm)).call(this, props));
+
+	    _this.addNote = _this.addNote.bind(_this); // de function addNote hieu dc this cua component NoteForm
+	    return _this;
 	  }
 
 	  _createClass(NoteForm, [{
@@ -21686,7 +21705,7 @@
 
 
 	// module
-	exports.push([module.id, ".main{\n  border: 1px solid;\n  width: 200px;\n  padding: 10px;\n  border-radius: 5px;\n  margin: auto;\n\n}\n.note{\n  border: 1px solid black;\n  margin-top: 10px;\n}\n", ""]);
+	exports.push([module.id, ".main{\r\n  border: 1px solid;\r\n  width: 200px;\r\n  padding: 10px;\r\n  border-radius: 5px;\r\n  margin: auto;\r\n\r\n}\r\n.note{\r\n  border: 1px solid black;\r\n  margin-top: 10px;\r\n}\r\n", ""]);
 
 	// exports
 
