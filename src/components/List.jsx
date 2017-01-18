@@ -6,11 +6,9 @@ import NoteForm from './NoteForm.jsx';
 class List extends React.Component{
   render(){
     return(
-      <div>
       <div className="main" >
         <NoteForm />
         <Note/>
-      </div>
       </div>
     );
   }
