@@ -16,7 +16,7 @@ module.exports = {
       },
        {
          test: /\.css$/,
-         loaders: [ 'style-loader', 'css-loader' ]
+         loaders: [ 'style-loader', 'css-loader' ]// add file css vao bundle
        }
     ]
   }
