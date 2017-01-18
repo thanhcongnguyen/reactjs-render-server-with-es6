@@ -2,11 +2,14 @@ import React from 'react';
 
 
 class Note extends React.Component{
+  deleteNote(){
+    console.log("xoa note");
+  }
   render(){
     return(
-      <div className="abc">
+      <div className="note">
         <h3>abcd</h3>
-        <button>Xóa</button>
+        <button onClick={this.deleteNote}>Xóa</button>
       </div>
     )
   }

@@ -21566,11 +21566,16 @@
 	  }
 
 	  _createClass(Note, [{
+	    key: "deleteNote",
+	    value: function deleteNote() {
+	      console.log("xoa note");
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "abc" },
+	        { className: "note" },
 	        _react2.default.createElement(
 	          "h3",
 	          null,
@@ -21578,7 +21583,7 @@
 	        ),
 	        _react2.default.createElement(
 	          "button",
-	          null,
+	          { onClick: this.deleteNote },
 	          "X\xF3a"
 	        )
 	      );
@@ -21620,6 +21625,11 @@
 	  }
 
 	  _createClass(NoteForm, [{
+	    key: "addNote",
+	    value: function addNote() {
+	      console.log("addnote");
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21629,7 +21639,7 @@
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	          "button",
-	          null,
+	          { onClick: this.addNote },
 	          "Add"
 	        )
 	      );
@@ -21676,7 +21686,7 @@
 
 
 	// module
-	exports.push([module.id, ".main{\n  border: 1px solid;\n  width: 200px;\n  padding: 10px;\n  border-radius: 5px;\n  margin: auto;\n\n}\n", ""]);
+	exports.push([module.id, ".main{\n  border: 1px solid;\n  width: 200px;\n  padding: 10px;\n  border-radius: 5px;\n  margin: auto;\n\n}\n.note{\n  border: 1px solid black;\n  margin-top: 10px;\n}\n", ""]);
 
 	// exports
 
