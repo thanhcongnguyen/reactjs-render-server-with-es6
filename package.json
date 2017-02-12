@@ -9,6 +9,8 @@
   "author": "congnguyen",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.3",
+    "body-parser": "^1.16.1",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "react": "^15.4.1",

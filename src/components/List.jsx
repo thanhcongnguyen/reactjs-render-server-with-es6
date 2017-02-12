@@ -1,32 +1,28 @@
 import React from 'react';
 import Note from './Note.jsx';
 import NoteForm from './NoteForm.jsx';
+import Axios from 'axios'
 
-var arr=[1,2,3];
 
 class List extends React.Component{
   constructor(props){
     super(props);
-    // this.state = {arr: ["a", "b", "c"] };
+     this.state = {arr: [] };
 
   }
   
   componentDidMount() {
-		fetch('http://localhost:3000/getdata', {
-			method: 'GET',
-			data:  "nguyen thanh cong"
-			 })
-			.then(function(res){
-				return res.json()
-			}).then(function(body){
-				console.log(body)
-			})
-			.catch(function(err){
-				console.log("fetch error")
-			})
+		 Axios.post('/getdata')
+     .then(res =>{
+        this.setState({arr:res.data})
+        console.log(this.state)
+     })
+     .catch(function(err){
+        console.log("error" + err)
+     })
   }
   render(){
-    var arrPlus =arr.map((i)=> <Note key={i}>Bài -{i}</Note>);
+    var arrPlus =this.state.arr.map((i)=> <Note key={i}>Bài -{i}</Note>);
     return(
       <div className="main" >
         <NoteForm />
